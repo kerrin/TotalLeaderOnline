@@ -1,0 +1,54 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Expansions</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+
+   Expansions can be built on major squares only.<br />
+   Each major square can contain only one expansion<br />
+   <a name="expansion_table" />
+   Expansions<br />
+   <table border=1>
+      <tr>
+         <th align="left">Expansion</th><th align="left">Effect</th><th>Cost to Player to Build</th>
+      </tr>
+      <a name="fort" />
+      <tr>
+         <td align="left"><img src="/Images/exp_fort.gif" alt="" height="75" width="75"/>Fort</td><td>+1 unit to all attacks<br />+1 unit to all defences<br />Can see 2 squares in each direction</td><td>Money + 9 people for 1 turn</td>
+      </tr>
+      <a name="base" />
+      <tr>
+         <td align="left"><img src="/Images/exp_base.gif" alt="" height="75" width="75"/>Base</td><td>Recruits can be assigned here<br />Counts as a fort</td><td>Money + 9 people for 4 turns</td>
+      </tr>
+      <a name="irrigation" />
+      <tr>
+         <td align="left"><img src="/Images/exp_irrigation.gif" alt="" height="75" width="75"/>Irrigation</td><td>+1 to area for recruit calculations<br />Units count twice for money calculations</td><td>Money + 9 people for 2 turns</td>
+      </tr>
+      <a name="bridge" />
+      <tr>
+         <td align="left"><img src="/Images/exp_bridge.gif" alt="" height="75" width="75"/>Bridge</td><td>Allows sea to be owned by player, and occupied</td><td>Money + 9 people for 2 turns</td>
+      </tr>
+      <a name="port" />
+      <tr>
+         <td align="left"><img src="/Images/exp_port.gif" alt="" height="75" width="75"/>Port</td><td>Allows units to enter the sea</td><td>Money + 9 people for 1 turn</td>
+      </tr>
+      <a name="school" />
+      <tr>
+         <td align="left"><img src="/Images/exp_school.gif" alt="" height="75" width="75"/>School</td><td>Improves technology research<br />by generating 1 technology point<br />plus 1/9th per person</td><td>Money + 9 people for 2 turns</td>
+      </tr>
+      <a name="university" />
+      <tr>
+         <td align="left"><img src="/Images/exp_university.gif" alt="" height="75" width="75"/>University</td><td>Improves technology research<br />by generating 2 technology point<br />plus 2/9th per person</td><td>Money + 9 people for 3 turns</td>
+      </tr>
+      <a name="research_center" />
+      <tr>
+         <td align="left"><img src="/Images/exp_research_center.gif" alt="" height="75" width="75"/>Research Center</td><td>Improves technology research<br />by generating 3 technology point<br />plus 3/9th per person</td><td>Money + 9 people for 4 turns</td>
+      </tr>
+      <a name="tower">
+      <tr>
+         <td align="left"><img src="/Images/exp_tower.gif" alt="" height="75" width="75"/>Tower</td><td>View 4 squares in any direction<br />when occupied<br />+1 defence</td><td>Money + 9 people for 1 turn</td>
+      </tr>
+   </table>
+
+   <tmpl_include name="include_after.html">
+</body>

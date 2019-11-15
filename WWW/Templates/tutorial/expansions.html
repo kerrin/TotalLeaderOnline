@@ -1,0 +1,28 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Expansions</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">Expansions</p>
+   <p>You can not build any expansions until you have finished researching a technology that allows you to build one.</p>
+   <p>We started off researching Teaching in turn 1, so on turn 6 we will be able to build schools.</p>
+   <p>On turn 6, make sure you have 9 units on a major land square that doesn't already have an expansion on.<br />
+   Instead of moving these units, we are going to put them to work building a school.<br />
+   View the square they are on, and the move drop down will now have an additional option 'Build School'.<br />
+   Change the drop down to school and press the Move button.<br />
+   All 9 of the units are now building the school and cannot be used for anything else, including defending this square.</p>
+   <p>A School take 2 turns to build. So on the next turn, the units will still be busy building, and a school building will appear on the square, marked with a building in progress symbol.</p>
+   <p>Once the school is finsihed the building in progress symbol will disappear and the school will now be producing addtional research points.</p>
+   <p>By keeping 9 units on this school, you will gain an addtional science point, so it is worth considering leaving 9 units on the school, plus they will defend the school from attacking forces.</p>
+   <p>To find out what the expansions are, and what each of their benifits are, look in the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','effects'); submit_form('to_tutorial_form'); return false">Next (Building Effects)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

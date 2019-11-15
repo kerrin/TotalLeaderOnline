@@ -1,0 +1,65 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p class="invalidlabel"><tmpl_var name="error_message"></p></tmpl_if>
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <p class="label">Messages</p>
+<form name="delete_message_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Messages" />
+   <input name="event" type="hidden" value="Delete" />
+   <input name="message_ID" type="hidden" value="" />
+</form>
+<form name="view_message_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="ViewMessage" />
+   <input name="message_ID" type="hidden" value="" />
+</form>
+   <table class="label">
+      <tr>
+         <th class="label">
+            Game
+         </th>
+         <th class="label">
+            When
+         </th>
+         <th class="label">
+            From
+         </th>
+         <th class="label">
+            Subject
+         </th>
+         <th class="label">
+            Read
+         </th>
+         <th class="label">
+            Replied
+         </th>
+         <th class="label">
+            Action
+         </th>
+      </tr>
+      <tmpl_loop name="results_loop">
+      <tr>
+         <td align="left">
+            <tmpl_var name="game_name">
+         </td>
+         <td align="center">
+            <tmpl_var name="sent_date_time">
+         </td>
+         <td align="center">
+            <tmpl_var name="from_screen_name">
+         </td>
+         <td align="center">
+            <tmpl_var name="subject">
+         </td>
+         <td align="center">
+            <tmpl_if name="been_read">Yes<tmpl_else>No</tmpl_if>
+         </td>
+         <td align="center">
+            <tmpl_if name="replied">Yes<tmpl_else>No</tmpl_if>
+         </td>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:set_value('view_message_form','message_ID','<tmpl_var name="message_ID">');submit_form('view_message_form'); return false">View Message</a> | <a href="#" class="button" onClick="javascript:set_value('delete_message_form','message_ID','<tmpl_var name="message_ID">');submit_form('delete_message_form'); return false">Delete</a></td>
+      </tr>
+      </tmpl_loop>
+   <tmpl_include name="include_after.html">
+</body>

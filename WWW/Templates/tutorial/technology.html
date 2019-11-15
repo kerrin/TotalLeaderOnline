@@ -1,0 +1,27 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Technology</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">Technology</p>
+   <p>Every turn your scientist are researching new technology, but you have to tell them what you want them to research. So let do that now.</p>
+   <p>Go to the technology screen by selecting the <tmpl_if name="my_player_ID"><a href="#" class="menuitem" onClick="javascript:submit_form('to_tech_form'); return false"></tmpl_if>Technology<tmpl_if name="my_player_ID"></a></tmpl_if> button on the left menu.</p>
+   <p>You will see a screen outlining all the technology that can be reaserched, and what knowing each technologies advantage is. You can also see what technology is required before you can research a certain technology, which are shown by the arrow; Technology at the head of the arrow requires the technology at the tail before tit can be researched.</p>
+   <p>Technology in yellow can be researched now, technology in green you have (you will not have any yet), technology in red you cannot get as a prerequisit technology has not been research, and technology in light green is currently being research.</p>
+   <p>Only one technology can be researched at anytime, and researching will take multiple turns, so choose wisely.</p>
+   <p>Lets research Teaching as it is the prerequisit to many other technologies, and will alow us to build schools once we have it; Schools will speed up future research.</p>
+   <p>To research Teaching, simply press the technology and it will change colour to show you are now researching it. You will now no longer be able to research anything else until this technology has finished being researched in 5 turns.<p>
+   <p>Each technology has a cost, this is the number of research points required to research it, at the start of the game you get one point per turn.</p>
+   <p>At the bottom of the screen is a summary of you technology. It show how your attacking and defending are modified, how many technology points you generated last turn, what you are currently researching and how many technology points left in the current research.</p>
+   <p>For more details on technology, view the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','technology'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','expansions'); submit_form('to_tutorial_form'); return false">Next (Building Expansions)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

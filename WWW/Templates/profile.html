@@ -1,0 +1,78 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p><tmpl_var name="error_message"></p></tmpl_if>
+   <p class="label">Edit your profile</p>
+<form name="profile_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Profile" />
+   <input name="event" type="hidden" value="Update" />
+   <table>
+      <tr>
+         <td class="label">Email Address</td>
+         <td><tmpl_var name="username"></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_password">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Password</td>
+         <td><input name="password"  type="password" value="" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_confirm_password">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Confirm Password</td>
+         <td><input name="confirm_password"  type="password" value="" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_screen_name">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Screen Name</td>
+         <td><input name="screen_name"  type="text" value="<tmpl_var name="screen_name">" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_firstname">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>First Name</td>
+         <td><input name="firstname"  type="text" value="<tmpl_var name="firstname">" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_surname">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Surname</td>
+         <td><input name="surname"  type="text" value="<tmpl_var name="surname">" /></td>
+      </tr>
+      <tr>
+         <td class="label">Date Of Birth</td>
+         <td>
+            <tmpl_var name="dob_day">-<tmpl_var name="dob_month">-<tmpl_var name="dob_year">
+         </td>
+      </tr>
+      <tr <tmpl_if name="need_gender_ID">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>
+         <td>Gender</td>
+         <td>
+            <select name="gender_ID">
+               <tmpl_loop name="gender_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr <tmpl_if name="need_size_across">class="invalidlabel"<tmpl_else><tmpl_if name="need_size_down">class="invalidlabel"<tmpl_else>class="label"</tmpl_if></tmpl_if>>
+         <td>Board Size</td>
+         <td>
+            <select name="size_across">
+               <tmpl_loop name="size_across_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            Across By
+            <select name="size_down">
+               <tmpl_loop name="size_down_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            Down
+         </td>
+      </tr>
+      <tr>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:submit_form('profile_form'); return false">Update</a></td>
+      </tr>
+</form>
+   <tmpl_include name="include_after.html">
+</body>

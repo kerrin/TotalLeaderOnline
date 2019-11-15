@@ -1,0 +1,90 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Technology</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+
+   Technology can be researched at <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','school'); submit_form('to_manual_form'); return false">School</a>, <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','university'); submit_form('to_manual_form'); return false">University</a> and <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','research_center'); submit_form('to_manual_form'); return false">Research Center</a> expansions, each technology takes a different number of technology points, the number of points earned each turn is based on the number of <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','school'); submit_form('to_manual_form'); return false">Schools</a>, <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','university'); submit_form('to_manual_form'); return false">University</a> and <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','research_center'); submit_form('to_manual_form'); return false">Research Center</a> a player has and also the number of units on those expansions after all attacks.<br />
+   All players generate 1 technology point per turn.<br />
+   For each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','school'); submit_form('to_manual_form'); return false">School</a> the player owns they receive 1 technology point.<br />
+   For each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','university'); submit_form('to_manual_form'); return false">University</a> the player owns they receive 2 technology points.<br />
+   For each Research Center</a> the player owns they receive 3 technology points.<br />
+   For each unit on a <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','school'); submit_form('to_manual_form'); return false">School</a> the player owns they receive 1/9th of a technology point.<br />
+   For each unit on a <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','university'); submit_form('to_manual_form'); return false">University</a> the player owns they receive 2/9ths of a technology points.<br />
+   For each unit on a <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','research_center'); submit_form('to_manual_form'); return false">Research Center</a> the player owns they receive 3/9ths of a technology points.<br />
+   The total whole technology points is the amount of research for that player, that turn.<br />
+   Note: Partial technology points are lost<br />
+   Note: The technology points cost will change as balance testing is performed<br />
+
+   <a name="technology_table" />
+   Technologies<br />
+   <table border=1>
+      <tr>
+         <th align="left">Technology</th><th align="left">Effect<br />(accumulative)</th><th>Requires</th><th>Point<br />Cost</th></th>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_basicweapons.gif" alt="" />Basic Weapons</td><td>+1 Defence &amp; Attack</td><td>NONE</td><td>5</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_gunpowder.gif" alt="" />Gun Powder</td><td>+1 Defence &amp; Attack</td><td>Basic Weapons</td><td>50</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_tanks.gif" alt="" />Tanks</td><td>+1 Defence &amp; Attack</td><td>Gun Powder</td><td>100</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_armour.gif" alt="" />Armour</td><td>+1 Defence</td><td>NONE</td><td>20</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_masonry.gif" alt="" />Masonry</td><td>Allows Additional <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','base'); submit_form('to_manual_form'); return false">Bases</a></td><td>NONE</td><td>50</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_bricks.gif" alt="" />Bricks</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','fort'); submit_form('to_manual_form'); return false">Fort</a></td><td>Masonry</td><td>50</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_engineering.gif" alt="" />Engineering</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','brifge'); submit_form('to_manual_form'); return false">Bridges</a></td><td>Bricks</td><td>50</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_tallconstruction.gif" alt="" />Tall Construction</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','tower'); submit_form('to_manual_form'); return false">Towers</a></td><td>Engineering</td><td>50</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_farming.gif" alt="" />Farming</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','irrigation'); submit_form('to_manual_form'); return false">Irrigation</a></td><td>NONE</td><td>20</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_teaching.gif" alt="" />Teaching</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','school'); submit_form('to_manual_form'); return false">Schools</a></td><td>NONE</td><td>5</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_basicscience.gif" alt="" />Basic Science</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); set_form_section('to_manual_form','fire'); submit_form('to_manual_form'); return false">Fire</a></td><td>Teaching</td><td>10</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_advancedteaching.gif" alt="" />Advanced Teaching</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','university'); submit_form('to_manual_form'); return false">University</a></td><td>Teaching</td><td>50</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_research.gif" alt="" />Research</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','research_center'); submit_form('to_manual_form'); return false">Research Centre</a></td><td>Advanced Teaching</td><td>100</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_diplomacy.gif" alt="" />Basic Diplomacy</td><td>Allows Alliances</td><td>Basic Weapons</td><td>50</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_advanceddiplomacy.gif" alt="" />Advanced Diplomacy</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); set_form_section('to_manual_form','peace'); submit_form('to_manual_form'); return false">Peace</a></td><td>Basic Diplomacy</td><td>100</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_disease.gif" alt="" />Disease</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); set_form_section('to_manual_form','plague'); submit_form('to_manual_form'); return false">Plague</a></td><td>Basic Science</td><td>50</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_medicine.gif" alt="" />Medicine</td><td>Allows Plague Cure</td><td>Advanced Teaching</td><td>100</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_spying.gif" alt="" />Spying</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); set_form_section('to_manual_form','scout'); submit_form('to_manual_form'); return false">Normal Scout</a></td><td>Basic Diplomacy</td><td>30</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_espionage.gif" alt="" />Espionage</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); set_form_section('to_manual_form','suicidal_scout'); submit_form('to_manual_form'); return false">Suicide Scout</a></td><td>Spying</td><td>60</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_fanatics.gif" alt="" />Fanatics</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); set_form_section('to_manual_form','kamikaze_scout'); submit_form('to_manual_form'); return false">Kamikaze Scout</a></td><td>Espionage</td><td>90</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/tech_entertainment.gif" alt="" />Entertainment</td><td>Allows <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); set_form_section('to_manual_form','celebration'); submit_form('to_manual_form'); return false">Celebration</a></td><td>NONE</td><td>100</td>
+      </tr>
+
+   <tmpl_include name="include_after.html">
+</body>

@@ -1,0 +1,55 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p class="invalidlabel"><tmpl_var name="error_message"></p></tmpl_if>
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <p class="label">Players</p>
+<form name="select_player_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Players" />
+   <input name="event" type="hidden" value="SelectPlayer" />
+   <input name="selected_player_ID" type="hidden" value="" />
+</form>
+<form name="message_player_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="ViewMessage" />
+   <input name="event" type="hidden" value="NewMessage" />
+   <input name="to_member_ID" type="hidden" value="" />
+</form>
+   <table class="label">
+      <tr>
+         <th class="label">
+            Screen Name
+         </th>
+         <th class="label">
+            Colour
+         </th>
+         <th class="label">
+            Units Owned            
+         </th>
+         <th class="label">
+            Squares Owned            
+         </th>
+         <th class="label">
+            Action
+         </th>
+      </tr>
+      <tmpl_loop name="results_loop">
+      <tr>
+         <td align="left">
+            <tmpl_var name="screen_name">
+         </td>
+         <td align="center">
+            <tmpl_var name="colour">
+         </td>
+         <td align="center">
+            <tmpl_var name="units_owned">
+         </td>
+         <td align="center">
+            <tmpl_var name="squares_owned">
+         </td>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:set_value('message_player_form','to_member_ID','<tmpl_var name="member_ID">');submit_form('message_player_form'); return false">Send Message</a> | <a href="#" class="button" onClick="javascript:set_value('select_player_form','selected_player_ID','<tmpl_var name="player_ID">');submit_form('select_player_form'); return false">Select</a></td>
+      </tr>
+      </tmpl_loop>
+</form>
+   <tmpl_include name="include_after.html">
+</body>

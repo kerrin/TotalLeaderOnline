@@ -1,0 +1,36 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Making a Move</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">Making a Move</p>
+   <p></p>
+   <p>To move you will need units on the current square, select the direction you want to move the units in by changing the drop down or pressing the appropriate square on the area summary.<br />
+   Next select the number of units to move by changing the drop down.<br />
+   Next make sure the move type drop down is set to move.<br />
+   Once you are happy with the move press the Move button.<br />
+   You can build expansions on major squares and start effects on any square by changing the move type drop down.</p>
+   <p>If you change your mind, and wish to cancel a move, simply move 0 units to the square the move is for, and the move will be cancelled</p>
+   <p>Lets move the 9 units on the major square. So view the square in the center of you land at the center of the cross.<br />
+   Next view the surrounding squares by hovering the mouse over them, find one owned by the natives that has only a few units on and select it by pressing the mouse button. The direction drop down will now automatically change to the correct direction.<br />
+   The number of units should already be set to 9, if not change it to 9.<br />
+   The move type should already be set to move, if not change it to move.<br />
+   Now press the move button. The units should now move from the center square to the selected square, this shows where the units are going to move to and the number that are moving.</p>
+   <p>These units will attack the native units when the next turn occurs. For an explaination of how fighting works view the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','moving'); submit_form('to_manual_form'); return false">Manual</a></p>
+   <p>Now we have moved the units from this square, we have made space for more units to come in. We could move units from a neighbouring square if we wanted to, but since this is our base we can assign ne recruits here.</p>
+   <p>To assign recruits, make sure the recruits drop down is set to 9 (note the maximum number of recruits in the drop down is the number you can fit in the base, or how many you still have to assign, which ever is lower.)<br />
+   Next press the rectruit button and the recruits are assigned.<br />
+   You can cancel assigning recruits by setting the number to 0 and pressing assign.</p>
+   <p>Other types of move can also be made from this screen, and these are outlined in later sections of the tutorial.</p>
+   <p>For more details on moving, view the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','moving'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','technology'); submit_form('to_tutorial_form'); return false">Next (Research and Technology)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

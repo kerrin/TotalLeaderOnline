@@ -1,0 +1,20 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Help</p>
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+
+   <p><a href="#" class="menuitem" onClick="javascript:submit_form('to_tutorial_form'); return false">Tutorial</a></p>
+   <form name="to_tutorial_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Tutorial">
+      <input name="page" type="hidden" value="overview">
+   </form>
+   <p><a href="#" class="menuitem" onClick="javascript:submit_form('to_manual_form'); return false">Full Manual</a></p>
+   &nbsp;
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+   <tmpl_include name="include_after.html">
+</body>

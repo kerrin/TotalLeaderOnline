@@ -1,0 +1,156 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p class="invalidlabel"><tmpl_var name="error_message"></p></tmpl_if>
+   <p class="label">Please, enter the game details</p>
+<form name="find_game_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="FindGame" />
+   <input name="event" type="hidden" value="FindGame" />
+   <table class="label">
+      <tr>
+         <td<tmpl_if name="need_find_game_ID"> bgcolor=red</tmpl_if>>Game Name</td>
+         <td><input name="find_game_name"  type="text" value="<tmpl_var name="find_game_name">" /></td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_players"> bgcolor=red</tmpl_if>>Number of Players</td>
+         <td>
+            <select name="players">
+               <tmpl_loop name="players_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_board_width"> bgcolor=red</tmpl_if>>Board Width</td>
+         <td>
+            <select name="board_width">
+               <tmpl_loop name="board_width_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_board_height"> bgcolor=red</tmpl_if>>Board Height</td>
+         <td>
+            <select name="board_height">
+               <tmpl_loop name="board_height_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_turn_frequency"> bgcolor=red</tmpl_if>>Turn Frequency</td>
+         <td>
+            <select name="turn_frequency">
+               <tmpl_loop name="turn_frequency_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_turn_weekday_type_ID"> bgcolor=red</tmpl_if>>Weekdays</td>
+         <td>
+            <select name="turn_weekday_type_ID">
+               <tmpl_loop name="turn_weekday_type_ID_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_start_hour"> bgcolor=red</tmpl_if>>Start Turns Daily At</td>
+         <td>
+            <select name="start_hour">
+               <tmpl_loop name="start_hour_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            Hours
+         </td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_stop_hour"> bgcolor=red</tmpl_if>>Stop Turns Daily At</td>
+         <td>
+            <select name="stop_hour">
+               <tmpl_loop name="stop_hour_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            Hours
+         </td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_start_date"> bgcolor=red</tmpl_if>>Start Game On</td>
+         <td>
+            <select name="start_day">
+               <tmpl_loop name="start_day_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            <select name="start_month">
+               <tmpl_loop name="start_month_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            <select name="start_year">
+               <tmpl_loop name="start_year_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> sel
+ected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_min_turns"> bgcolor=red</tmpl_if>>Minimum Game Turns</td>
+         <td><input name="min_turns"  type="text" value="<tmpl_var name="min_turns">" /></td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_max_turns"> bgcolor=red</tmpl_if>>Maximum Game Turns</td>
+         <td><input name="max_turns"  type="text" value="<tmpl_var name="max_turns">" /></td>
+      </tr>
+      <tr>
+         <td<tmpl_if name="need_started"> bgcolor=red</tmpl_if>>In Progress</td>
+         <td>
+            No:<input name="started" type="radio" value="0"<tmpl_unless name="started"> checked</tmpl_unless> />
+            Yes:<input name="started" type="radio" value="1"<tmpl_if name="started"> checked</tmpl_if> />
+         </td>
+      </tr>
+      <tr>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:submit_form('find_game_form'); return false">Find Game</a></td>
+      </tr>
+</form>
+   <tmpl_include name="include_after.html">
+</body>

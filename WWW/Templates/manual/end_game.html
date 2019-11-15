@@ -1,0 +1,73 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Ending Games</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+
+   <p class="manual_heading">Losing</p>
+   A player loses when one of the following conditions are met:<br />
+   <ul>
+      <li>They lose there last base</li>
+      <li>They own less than 5 squares</li>
+      <li>They resign</li>
+   </ul>
+   <p class="manual_heading">Winning</p>
+   The idea of the game is to meet a winning condition, these are:<br />
+   <ul>
+      <li>Having more than 1 million money</li>
+      <li>Owning more than 50% of occupyable area (<a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','bridge'); submit_form('to_manual_form'); return false">Bridges</a> count)</li>
+      <li>Having a population of more that 1000</li>
+      <li>Last player in the game</li>
+      <li>Person with the highest score after maximum game turns</li>
+   </ul>
+   The values can be changed from the defaults when a player sets the game up.<br />
+
+   <p class="manual_heading">Scoring</p>
+   If the game ends due to the maximum number of turns elapsing, then the winner is decided by scoring.<br />
+   <a name="scoring_table" />
+   Scoring<br />
+   <table border=1>
+      <tr>
+         <th align="left">What</th><th align="left">Point Value</th>
+      </tr>
+      <tr>
+         <td>Every 10 money</td><td>1</td>
+      </tr>
+      <tr>
+         <td>5 units</td><td>1</td>
+      </tr>
+      <tr>
+         <td>Land Owned<br />(not bridges or occupied sea)</td><td>10</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','technology'); submit_form('to_manual_form'); return false">Technology</a> Researched</td><td>10</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','fort'); submit_form('to_manual_form'); return false">Fort</a></td><td>1</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','base'); submit_form('to_manual_form'); return false">Base</a></td><td>5</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','irrigate'); submit_form('to_manual_form'); return false">Irrigated</a> Square</td><td>2</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','bridge'); submit_form('to_manual_form'); return false">Bridge</a></td><td>2</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','port'); submit_form('to_manual_form'); return false">Port</a></td><td>1</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','school'); submit_form('to_manual_form'); return false">School</a></td><td>2</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','university'); submit_form('to_manual_form'); return false">University</a></td><td>3</td>
+      </tr>
+      <tr>
+         <td>Each <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','research_center'); submit_form('to_manual_form'); return false">Research Center</a></td><td>4</td>
+      </tr>
+   </table>
+   Note: Players only score for expansions they own at the end of the game. Thus players may score for expansions built by other players, or not score for expansions they built.<br />
+
+   <tmpl_include name="include_after.html">
+</body>

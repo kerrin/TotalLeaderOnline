@@ -1,0 +1,121 @@
+<table cellpadding=0 cellspacing=0 class="menuitem" width=100% border=0>
+   <tr valign=top width=100%>
+      <td>
+         <table cellspacing=0 cellpadding=0 border=0>
+            <tr>
+               <td>
+                  <div class="tb_button_start_box">
+                  <div class="tb_bg_left">
+                  <div class="tb_button_left">
+                  </div>
+                  </div>
+                  </div>
+               </td>
+               <td>
+                  <div class="tb_button_box">
+                  <div class="tb_button_bg">
+                  <div class="tb_button">
+                  <a href="#" class="menuitem" onClick="javascript:submit_form('to_home_form'); return false">Home</a>
+                  &nbsp;
+                  <form name="to_home_form" action="/cgi/page.cgi" method="post">
+                     <input name="state" type="hidden" value="<tmpl_var name="state">">
+                     <input name="action" type="hidden" value="Welcome">
+                  </form>
+                  </div>
+                  </div>
+                  </div>
+               </td>
+            <tmpl_if name="logged_on">
+               <td>
+                  <div class="tb_button_box">
+                  <div class="tb_seperator">
+                  </div>
+                  <div class="tb_button_bg">
+                  <div class="tb_button">
+                  <a href="#" class="menuitem" onClick="javascript:submit_form('to_logoff_form'); return false">Log Off</a>
+                  &nbsp;
+                  <form name="to_logoff_form" action="/cgi/page.cgi" method="post">
+                     <input name="state" type="hidden" value="<tmpl_var name="state">">
+                     <input name="action" type="hidden" value="LogOff">
+                  </form>
+                  </div>
+                  </div>
+                  </div>
+               </td>
+               <td>
+                  <div class="tb_button_box">
+                  <div class="tb_seperator">
+                  </div>
+                  <div class="tb_button_bg">
+                  <div class="tb_button">
+                  <a href="#" class="menuitem" onClick="javascript:submit_form('to_myprofile_form'); return false">My Profile</a>
+                  &nbsp;
+                  <form name="to_myprofile_form" action="/cgi/page.cgi" method="post">
+                     <input name="state" type="hidden" value="<tmpl_var name="state">">
+                     <!--input name="site" type="hidden" value="Global"-->
+                     <input name="action" type="hidden" value="Profile">
+                     <input name="no_check" type="hidden" value="1">
+                  </form>
+                  </div>
+                  </div>
+                  </div>
+               </td>
+            <tmpl_else>
+               <td>
+                  <div class="tb_button_box">
+                  <div class="tb_seperator">
+                  </div>
+                  <div class="tb_button_bg">
+                  <div class="tb_button">
+                  <a href="#" class="menuitem" onClick="javascript:submit_form('to_logon_form'); return false">Log On</a>
+                  &nbsp;
+                  <form name="to_logon_form" action="/cgi/page.cgi" method="post">
+                     <input name="state" type="hidden" value="<tmpl_var name="state">">
+                     <input name="action" type="hidden" value="LogOn">
+                  </form>
+                  </div>
+                  </div>
+                  </div>
+               </td>
+               <td>
+                  <div class="tb_button_box">
+                  <div class="tb_seperator">
+                  </div>
+                  <div class="tb_button_bg">
+                  <div class="tb_button">
+                  <a href="#" class="menuitem" onClick="javascript:submit_form('to_register_form'); return false">Register</a>
+                  &nbsp;
+                  <form name="to_register_form" action="/cgi/page.cgi" method="post">
+                     <input name="state" type="hidden" value="<tmpl_var name="state">">
+                     <input name="action" type="hidden" value="Register">
+                     <input name="no_check" type="hidden" value="1">
+                  </form>
+                  </div>
+                  </div>
+                  <div class="tb_seperator">
+                  </div>
+                  </div>
+               </td>
+            </tmpl_if>
+               <td>
+                  <div class="tb_button_end_box">
+                  <div class="tb_bg_right">
+                  <div class="tb_button_right">
+                  </div>
+                  </div>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </td>
+      <td width=100%>
+         <table width=100% class="top_bar_remaining">
+            <tr width=100%>
+               <td class="label" width=100%>
+                  <tmpl_if name="logged_on">Logged on as: <tmpl_var name="current_member_screen_name"><tmpl_else>&nbsp;</tmpl_if>
+               </td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>

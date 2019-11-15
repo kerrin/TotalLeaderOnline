@@ -1,0 +1,73 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p class="invalidlabel"><tmpl_var name="error_message"></p></tmpl_if>
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <p class="label">Games Found</p>
+<form name="select_game_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="FoundGames" />
+   <input name="event" type="hidden" value="SelectGame" />
+   <input name="game_ID" type="hidden" value="" />
+</form>
+   <table class="label">
+      <tr>
+         <th class="label">
+            Name
+         </th>
+         <th class="label">
+            Width<br />Height
+         </th>
+         <th class="label">
+            Players  
+         </th>
+         <th class="label">
+            Frequency
+         </th>
+         <th class="label">
+            Days
+         </th>
+         <th class="label">
+            Next Turn At
+         </th>
+         <th class="label">
+            Current<br />Turn
+         </th>
+         <th class="label">
+            Last<br />Turn
+         </th>
+         <th class="label">
+            Action
+         </th>
+      </tr>
+      <tmpl_loop name="results_loop">
+      <tr>
+         <td>
+            <tmpl_var name="name">
+         </td>
+         <td align="center">
+            <tmpl_var name="width">/<tmpl_var name="height">
+         </td>
+         <td align="center">
+            <tmpl_var name="players">
+         </td>
+         <td align="center">
+            <tmpl_var name="frequency_name">
+         </td>
+         <td align="center">
+            <tmpl_var name="frequency_weekday_name">
+         </td>
+         <td align="center">
+            <tmpl_var name="next_turn">
+         </td>
+         <td align="center">
+            <tmpl_var name="turn">
+         </td>
+         <td align="center">
+            <tmpl_var name="max_turns">
+         </td>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:set_value('select_game_form','game_ID','<tmpl_var name="ID">');submit_form('select_game_form'); return false">Select</a></td>
+      </tr>
+      </tmpl_loop>
+</form>
+   <tmpl_include name="include_after.html">
+</body>

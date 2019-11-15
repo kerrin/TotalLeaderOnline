@@ -1,0 +1,100 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p class="invalidlabel"><tmpl_var name="error_message"></p></tmpl_if>
+   <p class="label">Message</p>
+<form name="delete_message_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Messages" />
+   <input name="event" type="hidden" value="Delete" />
+   <input name="message_ID" type="hidden" value="<tmpl_var name="message_ID">" />
+</form>
+   <table class="label">
+      <tmpl_unless name="no_previous_message">
+      <tr>
+         <th class="label">
+            Game:
+         </th>
+         <td align="left">
+            <tmpl_var name="game_name">
+         </td>
+      </tr>
+      <tr>
+         <th class="label">
+            From:
+         </th>
+         <td align="left">
+            <tmpl_var name="from_screen_name">
+         </td>
+      </tr>
+      <tr>
+         <th class="label">
+            When:
+         </th>
+         <td align="left">
+            <tmpl_var name="sent_date_time">
+         </td>
+      </tr>
+      <tr>
+         <th class="label">
+            Subject:
+         </th>
+         <td align="left">
+            <tmpl_var name="subject">
+         </td>
+      </tr>
+      <tr>
+         <th class="label">
+            Message:
+         </th>
+         <td align="left">
+            <tmpl_var name="message">
+         </td>
+      </tr>
+      <tr>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:submit_form('delete_message_form'); return false">Delete</a></td>
+      </tr>
+      <tr>
+         <th class="label" colspan="2">
+            Reply
+         </th>
+      </tr>
+      </tmpl_unless>
+<form name="send_message_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="ViewMessage" />
+   <input name="event" type="hidden" value="SendMessage" />
+   <input name="to_member_ID" type="hidden" value="<tmpl_var name="new_message_member_ID">" />
+   <input name="message_ID" type="hidden" value="<tmpl_var name="message_ID">" />
+      <tr>
+         <th class="label">
+            To:
+         </th>
+         <td align="left">
+            <tmpl_var name="send_to_name">
+         </td>
+      </tr>
+      <tr>
+         <th class="label">
+            Subject:
+         </th>
+         <td align="left">
+            <input type="text" name="send_subject" value="<tmpl_var name="subject">" />
+         </td>
+      </tr>
+      <tr>
+         <th class="label">
+            Message:
+         </th>
+         <td align="left">
+            <textarea name="send_message" cols="50" rows="20"><tmpl_if name="message">
+
+<tmpl_var name="from_screen_name"> Said:
+<tmpl_var name="message"></tmpl_if></textarea>
+         </td>
+      </tr>
+      <tr>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:submit_form('send_message_form'); return false">Send Message</a></td>
+      </tr>
+</form>
+   <tmpl_include name="include_after.html">
+</body>

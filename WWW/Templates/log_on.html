@@ -1,0 +1,14 @@
+<body class="wholebody" onLoad="focus_form('logon_form','username');">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p><tmpl_var name="error_message"></p></tmpl_if>
+   <p>Please, enter your email address and password</p>
+<form name="logon_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="username"  type="text" value"<tmpl_var name="username">" onKeyPress="javascript:refocus_form_on_enter('logon_form','password');"/><br />
+   <input name="password"  type="password" value"" onKeyPress="javascript:submit_form_on_enter('logon_form');" /><br />
+   <a href="#" class="button" onClick="javascript:submit_form('logon_form'); return false">Log On</a>
+   <input name="action" type="hidden" value="LogOn" />
+   <input name="event" type="hidden" value="LogOn" />
+</form>
+   <tmpl_include name="include_after.html">
+</body>

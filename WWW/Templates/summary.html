@@ -1,0 +1,17 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p><tmpl_var name="error_message"></p></tmpl_if>
+   <tmpl_if name="message"><p><tmpl_var name="message"></p></tmpl_if>
+<div>
+   Units Owned: <tmpl_var name="units_owned"><br />
+   Land Controlled: <tmpl_var name="squares_controled"><br />
+   Trained Recruits: <tmpl_var name="pending_recruits"><br />
+   Money: <tmpl_var name="money"><br />
+   Attack Modifier: <tmpl_var name="attack_modifier"><br />
+   Defense Modifier: <tmpl_var name="defense_modifier"><br />
+   Technology Points Last Turn: <tmpl_var name="tech_points"><br />
+   Current Research: <tmpl_var name="current_research"><br />
+   Current Research Left: <tmpl_var name="current_research_left"><br />
+</div>
+   <tmpl_include name="include_after.html">
+</body>

@@ -1,0 +1,51 @@
+<table>
+   <tr>
+      <td class="thismenuitem">
+         <tmpl_unless name="started"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','started'); submit_form('to_manual_form'); return false"></tmpl_unless>Getting Started<tmpl_unless name="started"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="board"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','board'); submit_form('to_manual_form'); return false"></tmpl_unless>Board<tmpl_unless name="board"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="moving"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','moving'); submit_form('to_manual_form'); return false"></tmpl_unless>Moving &amp; Attacking<tmpl_unless name="moving"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="expansions"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); submit_form('to_manual_form'); return false"></tmpl_unless>Expansions<tmpl_unless name="expansions"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="effects"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); submit_form('to_manual_form'); return false"></tmpl_unless>Effects<tmpl_unless name="effects"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="technology"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','technology'); submit_form('to_manual_form'); return false"></tmpl_unless>Technology<tmpl_unless name="technology"></a></tmpl_unless>
+      </td>
+      <!--td>
+         <tmpl_unless name="allies"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','allies'); submit_form('to_manual_form'); return false"></tmpl_unless>Allies<tmpl_unless name="allies"></a></tmpl_unless>
+      </td-->
+      <td class="thismenuitem">
+         <tmpl_unless name="recruits_and_money"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','recruits_and_money'); submit_form('to_manual_form'); return false"></tmpl_unless>Recruits &amp; Money<tmpl_unless name="recruits_and_money"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="turn_order"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','turn_order'); submit_form('to_manual_form'); return false"></tmpl_unless>Turn Order<tmpl_unless name="turn_order"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="summary"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','summary'); submit_form('to_manual_form'); return false"></tmpl_unless>Summary<tmpl_unless name="summary"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="end_game"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','end_game'); submit_form('to_manual_form'); return false"></tmpl_unless>End Game<tmpl_unless name="end_game"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="profile"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','profile'); submit_form('to_manual_form'); return false"></tmpl_unless>My Profile<tmpl_unless name="profile"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="players"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','players'); submit_form('to_manual_form'); return false"></tmpl_unless>Players<tmpl_unless name="players"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="messages"><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','messages'); submit_form('to_manual_form'); return false"></tmpl_unless>Messaging<tmpl_unless name="messages"></a></tmpl_unless>
+      </td>
+   </tr>
+</table>
+<form name="to_manual_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Manual">
+   <input name="page" type="hidden" value="">
+</form>

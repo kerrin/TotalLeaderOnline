@@ -1,0 +1,26 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Finding a Game</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">How To Find a Game</p>
+   <p>First thing we need to do is find a game to join.<br />
+   To find a game, select the <tmpl_if name="logged_on"><a href="#" class="menuitem" onClick="javascript:submit_form('to_find_game_form'); return false"></tmpl_if>Find Game<tmpl_if name="logged_on"></a></tmpl_if> button on the left menu. For now just press the Find button to list all games that have yet to start, later you can fill out any requirements for a game you would like to play, and then press the Find button to find a game that matches your playing needs.</p>
+   <p>Leaving fields blank and the drop down boxes on any will not restict the search on that crieria.</p>
+   <p>After pressing the Find button you will be presented with the list of games. Note: If no games are listed, then there are no games waiting to start, so look in the <a href="#" class="menuitem" onClick="javascript: set_form_section('to_manual_form','create'); submit_form('to_manual_form'); return false">Manual</a> to see how to create a game.</p>
+   <p>To view a game, select it by pressing the Select button on the result screen.</p>
+   
+   <p class="manual_heading">Choosing a Game</p>
+   <p>Once a game has been selected you will be taken to the board for that game. To return to the board of the cuurently selected game at anytime, simply press the Board button on the left hand menu. If the menu does not have a board button, you currently have no selected game.</p>
+   <p>For move details on finding a creating games, veiw the Getting Started section of the <a href="#" class="menuitem" onClick="javascript:submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','board'); submit_form('to_tutorial_form'); return false">Next (Board)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

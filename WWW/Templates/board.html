@@ -1,0 +1,93 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <div class="here">
+   <tmpl_if name="error_message"><p><tmpl_var name="error_message"></p></tmpl_if>
+   <tmpl_if name="message"><p><tmpl_var name="message"></p></tmpl_if>
+<form name="board_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Board" />
+   <input name="event" type="hidden" value="SelectSquare" />
+   <input name="row" type="hidden" value="<tmpl_var name="row">" />
+   <input name="column" type="hidden" value="<tmpl_var name="column">" />
+   <div style="position:absolute; left:<tmpl_var name="center_of_board">;  top:<tmpl_var name="top_of_board_out">;  width:50; height:20;">
+      <select name="action_type">
+         <tmpl_loop name="action_type_loop">
+         <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+         <tmpl_var name="name">
+         </option>
+         </tmpl_loop>
+      </select>
+   </div>
+   <!--<div style="position:absolute; left:120;  top:<tmpl_var name="top_of_board_out">;  width:300; height:20;">
+      Total Squares With Units Doing Nothing: <tmpl_var name="visible_squares_not_fully_moved">
+   </div>-->
+</form>
+   <div class="here">
+      <tmpl_loop name="row_loop">
+      <div style="position:absolute; left:10;  top:10;  width:500; height:50;">
+         <tmpl_loop name="column_loop">
+         <div style="position:absolute; left:<tmpl_var name="left">;  top:<tmpl_var name="top">;  width:50; height:50;">
+            <a href="#" onClick="javascript:set_value('board_form','row','<tmpl_var name="down">');set_value('board_form','column','<tmpl_var name="across">');submit_form('board_form'); return false"><img src="<tmpl_var name="land_image">" alt="<tmpl_var name="down">,<tmpl_var name="across">" border=0 /></a>
+         </div>
+         <tmpl_if name="units_image">
+         <div style="position:absolute; left:<tmpl_var name="center_left">;  top:<tmpl_var name="center_top">;  width:50; height:50;">
+            <a href="#" onClick="javascript:set_value('board_form','row','<tmpl_var name="down">');set_value('board_form','column','<tmpl_var name="across">');submit_form('board_form'); return false"><img src="<tmpl_var name="units_image">" border=0 /></a>
+         </div>
+         </tmpl_if>
+         <tmpl_if name="owner_image">
+         <div style="position:absolute; left:<tmpl_var name="center_left">;  top:<tmpl_var name="center_top">;  width:50; height:50;">
+            <a href="#" onClick="javascript:set_value('board_form','row','<tmpl_var name="down">');set_value('board_form','column','<tmpl_var name="across">');submit_form('board_form'); return false"><img src="<tmpl_var name="owner_image">" border=0 /></a>
+         </div>
+         </tmpl_if>
+         <tmpl_if name="moved_image">
+         <div style="position:absolute; left:<tmpl_var name="center_left">;  top:<tmpl_var name="center_top">;  width:20; height:20;">
+            <a href="#" onClick="javascript:set_value('board_form','row','<tmpl_var name="down">');set_value('board_form','column','<tmpl_var name="across">');submit_form('board_form'); return false"><img src="<tmpl_var name="moved_image">" border=0 /></a>
+         </div>
+         </tmpl_if>
+         <tmpl_if name="exp_image">
+         <div style="position:absolute; left:<tmpl_var name="left">;  top:<tmpl_var name="top">;  width:125; height:125;">
+            <a href="#" onClick="javascript:set_value('board_form','row','<tmpl_var name="down">');set_value('board_form','column','<tmpl_var name="across">');submit_form('board_form'); return false"><img src="<tmpl_var name="exp_image">" border=0 /></a>
+         </div>
+         <tmpl_if name="building_image">
+         <div style="position:absolute; left:<tmpl_var name="left">;  top:<tmpl_var name="top">;  width:125; height:125;">
+            <a href="#" onClick="javascript:set_value('board_form','row','<tmpl_var name="down">');set_value('board_form','column','<tmpl_var name="across">');submit_form('board_form'); return false"><img src="<tmpl_var name="building_image">" border=0 /></a>
+         </div>
+         </tmpl_if>
+         </tmpl_if>
+         <tmpl_if name="effect_image">
+         <div style="position:absolute; left:<tmpl_var name="center_left">;  top:<tmpl_var name="center_top">;  width:50; height:50;">
+            <a href="#" onClick="javascript:set_value('board_form','row','<tmpl_var name="down">');set_value('board_form','column','<tmpl_var name="across">');submit_form('board_form'); return false"><img src="<tmpl_var name="effect_image">" border=0 /></a>
+         </div>
+         </tmpl_if>
+         </tmpl_loop>
+      </div>
+      </tmpl_loop>
+   </div>
+   <div style="position:absolute; left:<tmpl_var name="left_of_board_in">;  top:<tmpl_var name="top_of_board_out">;  width:50; height:20;">
+      <a href="#" onClick="javascript:set_value('board_form','action_type',1);set_value('board_form','column','<tmpl_var name="left_across">');submit_form('board_form'); return false"><img src="/Images/left.gif" border=0 /></a> 
+   </div>
+   <div style="position:absolute; left:<tmpl_var name="right_of_board_in">;  top:<tmpl_var name="top_of_board_out">;  width:50; height:20;">
+      <a href="#" onClick="javascript:set_value('board_form','action_type',1);set_value('board_form','column','<tmpl_var name="right_across">');submit_form('board_form'); return false"><img src="/Images/right.gif" border=0 /></a> 
+   </div>
+   <div style="position:absolute; left:<tmpl_var name="left_of_board_out">;  top:<tmpl_var name="top_of_board_in">;  width:20; height:50;">
+      <a href="#" onClick="javascript:set_value('board_form','action_type',1);set_value('board_form','row','<tmpl_var name="up_down">');submit_form('board_form'); return false"><img src="/Images/up.gif" border=0 /></a> 
+   </div>
+   <div style="position:absolute; left:<tmpl_var name="right_of_board_out">;  top:<tmpl_var name="top_of_board_in">;  width:20; height:50;">
+      <a href="#" onClick="javascript:set_value('board_form','action_type',1);set_value('board_form','row','<tmpl_var name="up_down">');submit_form('board_form'); return false"><img src="/Images/up.gif" border=0 /></a> 
+   </div>
+   <div style="position:absolute; left:<tmpl_var name="left_of_board_out">;  top:<tmpl_var name="base_of_board_in">;  width:20; height:50;">
+      <a href="#" onClick="javascript:set_value('board_form','action_type',1);set_value('board_form','row','<tmpl_var name="down_down">');submit_form('board_form'); return false"><img src="/Images/down.gif" border=0 /></a> 
+   </div>
+   <div style="position:absolute; left:<tmpl_var name="right_of_board_out">;  top:<tmpl_var name="base_of_board_in">;  width:20; height:50;">
+      <a href="#" onClick="javascript:set_value('board_form','action_type',1);set_value('board_form','row','<tmpl_var name="down_down">');submit_form('board_form'); return false"><img src="/Images/down.gif" border=0 /></a> 
+   </div>
+   <div style="position:absolute; left:<tmpl_var name="left_of_board_in">;  top:<tmpl_var name="base_of_board_out">;  width:50; height:20;">
+      <a href="#" onClick="javascript:set_value('board_form','action_type',1);set_value('board_form','column','<tmpl_var name="left_across">');submit_form('board_form'); return false"><img src="/Images/left.gif" border=0 /></a> 
+   </div>
+   <div style="position:absolute; left:<tmpl_var name="right_of_board_in">;  top:<tmpl_var name="base_of_board_out">;  width:50; height:20;">
+      <a href="#" onClick="javascript:set_value('board_form','action_type',1);set_value('board_form','column','<tmpl_var name="right_across">');submit_form('board_form'); return false"><img src="/Images/right.gif" border=0 /></a> 
+   </div>
+</form>
+   </div>
+   <tmpl_include name="include_after.html">
+</body>

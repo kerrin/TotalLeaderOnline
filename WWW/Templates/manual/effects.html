@@ -1,0 +1,50 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Square Effects</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+
+   Squares can have effects on them, these can be initiated by players for various reasons or randomly occur.<br />
+
+   <a name="square_effect_table" />
+   Square Effects<br />
+   <table border=1>
+      <tr>
+         <th align="left">Square Effect</th><th align="left">Effect on square</th><th>Cost to Player to Create</th>
+      </tr>
+      <a name="fire" />
+      <tr>
+         <td align="left"><img src="/Images/effect_fire.gif" alt="" />Fire</td><td>-1 unit in battles, may spread to adjacent squares, regardless of owner, may stop, can be stopped by player if paid forChance of 1 unit being lost</td><td>Risk loss of 1 adjacent unit (assigned for turn), and money</td>
+      </tr>
+      <a name="storm" />
+      <tr>
+         <td align="left"><img src="/Images/effect_storm.gif" alt="" />Storm</td><td>-1 unit in battles to both sides, may damage expansions, may move to adjacent squares, regardless of owner</td><td>Randomly Occuring</td>
+      </tr>
+      <a name="scout" />
+      <tr>
+         <td align="left"><img src="/Images/effect_scout.gif" alt="" />Scout</td><td>Scout owner has full view of square for number of turns equal to units sent, owner of square gains a unit per turn for this duration</td><td>1 to 9 Units</td>
+      </tr>
+      <a name="suicidal_scout" />
+      <tr>
+         <td align="left"><img src="/Images/effect_suicidal_scout.gif" alt="" />Suicidal Scout</td><td>Scout owner has full view of square for number of turns equal to units sent</td><td>1 to 9 Units, Plus Money</td>
+      </tr>
+      <a name="kamikaze_scout" />
+      <tr>
+         <td align="left"><img src="/Images/effect_kamikaze_scout.gif" alt="" />Kamikaze Scout</td><td>Scout owner has full view of square for number of turns equal to units sent, owner of square losses a unit per turn for the duration</td><td>1 to 9 Units, Plus Money</td>
+      </tr>
+      <a name="plague" />
+      <tr>
+         <td align="left"><img src="/Images/effect_plague.gif" alt="" />Plague</td><td>-1 unit in battle. Lose one unit per turn for number of turn equal to number of units that initiated it</td><td>1 to 9 Units, Plus Money</td>
+      </tr>
+      <a name="celebration" />
+      <tr>
+         <td align="left"><img src="/Images/effect_celebration.gif" alt="" />Celebration</td><td>+1 unit in battle, counts as two squares for recruiting and doubles unit count for money calculations</td><td>Money</td>
+      </tr>
+      <a name="peace" />
+      <tr>
+         <td align="left"><img src="/Images/effect_forced_peace.gif" alt="" />Peace</td><td>Square cannot be attacked</td><td>Money</td>
+      </tr>
+   </table>
+
+   <tmpl_include name="include_after.html">
+</body>

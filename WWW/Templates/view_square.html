@@ -1,0 +1,229 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <div class="here">
+   <div style="position:absolute; left:0;  top:0;  width:300; height:300;">
+   <table>
+      <tmpl_loop name="area">
+      <tr>
+         <tmpl_loop name="col">
+         <td>
+            <div onmouseover="javascript: show_div(<tmpl_var name="column">,<tmpl_var name="row">); return false" onmouseout="javascript: hide_div(<tmpl_var name="column">,<tmpl_var name="row">); return false" onclick="JavaScript: update_direction(<tmpl_var name="column">,<tmpl_var name="row">); return false">
+               <div style="position:absolute; left:<tmpl_var name="left">;  top:<tmpl_var name="top">;  width:50; height:50;">
+                  <img src="<tmpl_var name="land_image">" alt="<tmpl_var name="row">,<tmpl_var name="column">" />
+               </div>
+               <tmpl_if name="units_image">
+               <div style="position:absolute; left:<tmpl_var name="center_left">;  top:<tmpl_var name="center_top">;  width:50; height:50;">
+                  <img src="<tmpl_var name="units_image">" />
+               </div>
+               </tmpl_if>
+               <tmpl_if name="owner_image">
+               <div style="position:absolute; left:<tmpl_var name="center_left">;  top:<tmpl_var name="center_top">;  width:50; height:50;">
+                  <img src="<tmpl_var name="owner_image">" />
+               </div>
+               </tmpl_if>
+               <tmpl_if name="exp_image">
+               <div style="position:absolute; left:<tmpl_var name="left">;  top:<tmpl_var name="top">;  width:125; height:125;">
+                  <img src="<tmpl_var name="exp_image">" />
+               </div>
+               <tmpl_if name="building_image">
+               <div style="position:absolute; left:<tmpl_var name="left">;  top:<tmpl_var name="top">;  width:125; height:125;">
+                  <img src="<tmpl_var name="building_image">" />
+               </div>
+               </tmpl_if>
+               </tmpl_if>
+            </div>
+         </td>
+         </tmpl_loop>
+      </tr>
+      </tmpl_loop>
+      </table>
+   </div>
+   <div style="position:absolute; left:300;  top:0;  width:150; height:150;">
+      <tmpl_loop name="area">
+      <tmpl_loop name="col">
+      <div id="sq<tmpl_var name="column"><tmpl_var name="row">" style="position:absolute; left:0;  top:0;  width:150; height:150; visibility: hidden">
+         <table>
+            <tr>
+               <td></td>
+               <td>sq<tmpl_var name="column"><tmpl_var name="row"></td>
+            </tr>
+            <tr>
+               <td class="label">Units</td>
+               <td><img src="<tmpl_var name="occupied_units_image">" alt="<tmpl_var name="occupied_units">" /></td>
+            </tr>
+            <tmpl_if name="expansion_name">
+            <tr>
+               <td class="label">Expansion</td>
+               <td><tmpl_var name="expansion_name"></td>
+            </tr>
+            </tmpl_if>
+            <tr>
+               <td class="label">Owner</td>
+               <td><tmpl_var name="owner"></td>
+            </tr>
+            <tr>
+               <td colspan=2><img src="<tmpl_var name="land_image">" alt="<tmpl_var name="land_type">" /></td>
+            </tr>
+         </table>
+      </div>
+      </tmpl_loop>
+      </tmpl_loop>
+      <script language="JavaScript">show_div(1,1)</script>
+   </div>
+   <div style="position:absolute; left:0;  top:300;  width:600; height:150;">
+      <table>
+      <tmpl_if name="my_square">
+   <form name="move_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="ViewSquare" />
+      <input name="event" type="hidden" value="Move" />
+      <input name="row" type="hidden" value="<tmpl_var name="row">" />
+      <input name="column" type="hidden" value="<tmpl_var name="column">" />
+      <tr>
+         <td class="label">Move</td>
+         <td>
+            <select name="units">
+               <tmpl_loop name="units_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+         <td>
+            <select name="direction">
+               <tmpl_loop name="direction_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+         <td>
+            <select name="move_type_ID">
+               <tmpl_loop name="move_type_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+         <td align="left"><a href="#" class="button" onClick="javascript:submit_form('move_form'); return false">Move</a></td>
+      </tr>
+   </form>
+   <tmpl_if name="is_base">
+   <form name="recruits_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="ViewSquare" />
+      <input name="event" type="hidden" value="Recruits" />
+      <input name="row" type="hidden" value="<tmpl_var name="row">" />
+      <input name="column" type="hidden" value="<tmpl_var name="column">" />
+      <tr>
+         <td class="label">Assign recruits</td>
+         <td>
+            <select name="recruits">
+               <tmpl_loop name="recruits_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+         <td align="left"><a href="#" class="button" onClick="javascript:submit_form('recruits_form'); return false">Assign</a></td>
+      </tr>
+   </form>
+   </tmpl_if>
+      </tmpl_if>
+      <tmpl_if name="my_square_or_scout">
+      <tr>
+         <td class="label">Incoming Units:</td>
+         <td><tmpl_var name="incoming_units"><tmpl_if name="incoming_recruits"> + <tmpl_var name="incoming_recruits"></tmpl_if></td>
+      </tr>
+      </tmpl_if>
+      <tr>
+         <td class="label">Land Type:</td>
+         <td><tmpl_var name="land_type"></td>
+      </tr>
+      <tr>
+         <td class="label">Effects:</td>
+         <td><tmpl_var name="effects"></td>
+      </tr>
+   <tmpl_if name="my_square_or_scout">
+      <tmpl_if name="expansion_hp">
+      <tr>
+         <td class="label">Expansion Hit Points</td>
+         <td><tmpl_var name="expansion_hp"></td>
+      </tr>
+      </tmpl_if>
+      <tr>
+         <td class="label">Scouts:</td>
+         <td><tmpl_var name="scouts"></td>
+      </tr>
+   </tmpl_if>
+   <tr>
+      <td>
+         <form name="back_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="Board" />
+            <input name="row" type="hidden" value="<tmpl_var name="row">" />
+            <input name="column" type="hidden" value="<tmpl_var name="column">" />
+            <input name="action_type" type="hidden" value="3" />
+            <a href="#" class="button" onClick="javascript:submit_form('back_form'); return false">Back</a>
+         </form>
+      </td>
+   </tr>
+   </table>
+   </div>
+   <div style="position:absolute; left:0;  top:500;  width:600; height:100;">
+      <tmpl_if name="error_message"><div class="labelinvalid"><tmpl_var name="error_message"></div></tmpl_if>
+   </div>
+   <script language="JavaScript">
+      function ap_getObj(div)
+      {
+         if(document.getElementById) 
+         { 
+            return document.getElementById(div).style; 
+         } else if(document.all) { 
+            return document.all[div].style;            
+         } else if(document.layers) { 
+            return document.layers[div]; 
+         }
+      }
+      function show_div(col,row)
+      {
+         var divObj = ap_getObj('sq' + col + row);
+         divObj.visibility = "visible";
+      }
+      function hide_div(col,row)
+      {
+         var divObj = ap_getObj('sq' + col + row);
+         divObj.visibility = "hidden";
+      }
+      function update_direction(col,row)
+      {
+         var direction = 0;
+         if(row == 0) { 
+            direction += 1; 
+         } else if(row == 2) { 
+            direction += 4;
+         } 
+         if(col == 0) { 
+            direction += 8;
+         } else if(col == 2) { 
+            direction += 2;
+         }
+         var selected_index = document.move_form.direction.selectedIndex;
+         var number_of_options = document.move_form.direction.length;
+         var option_list = document.move_form.direction.options;
+         for(var i = 0; i < number_of_options; i++)
+         {
+            if(option_list[i].value == direction)
+            {
+               option_list[i].selected = 1;
+            }
+         }
+      }
+   </script>
+</div>
+   <tmpl_include name="include_after.html">
+</body>

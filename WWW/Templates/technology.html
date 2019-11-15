@@ -1,0 +1,70 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p><tmpl_var name="error_message"></p></tmpl_if>
+   <tmpl_if name="message"><p><tmpl_var name="message"></p></tmpl_if>
+<form name="tech_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Technology" />
+   <input name="event" type="hidden" value="research" />
+   <input name="tech_ID" type="hidden" value="" />
+   <table>
+      <tr>
+         <tmpl_loop name="tech_loop">
+         <td>
+            <table>
+               <tr>
+                  <td align="center"><tmpl_if name="left">&lt;--<tmpl_else>&nbsp;</tmpl_if></td>
+                  <td align="center">
+                     <tmpl_if name="label">
+                     <tmpl_if name="has">
+                     <!-- Have Already -->
+                     <div class="tech_have"><tmpl_var name="label"></div>
+                     <tmpl_else>
+                     <tmpl_if name="can_get">
+                     <tmpl_if name="getting">
+                     <tmpl_if name="getting_this">
+                     <!-- Researching -->
+                     <div class="tech_researching"><tmpl_var name="label"></div>
+                     <tmpl_else>
+                     <!-- Researching, but not this, which we could get -->
+                     <div class="tech_can_get"><tmpl_var name="label"></div>
+                     </tmpl_if><!-- getting_this -->
+                     <tmpl_else>
+                     <div>
+                     <a href="#" class="tech_can_get" onClick="javascript:set_value('tech_form','tech_ID','<tmpl_var name="ID">'); submit_form('tech_form'); return false"><tmpl_var name="label"></a>
+                     </div>
+                     </tmpl_if><!-- getting -->
+                     <tmpl_else>
+                     <!-- Cannot get yet -->
+                     <div class="tech_cannot_get"><tmpl_var name="label"></div>
+                     </tmpl_if><!-- can_get -->
+                     Cost: <tmpl_var name="tech_points"><br />
+                     </tmpl_if><!-- has -->
+                     <font size="1"><tmpl_var name="description"></font><br />
+                     <br />
+                     </tmpl_if>
+                  </td>
+                  <td align="center"><tmpl_if name="right">--&gt;<tmpl_else>&nbsp;</tmpl_if></td>
+               </tr>
+               <tr>
+                  <td colspan=3 align="center"><tmpl_if name="down">\/<tmpl_else><tmpl_if name="up">/\<tmpl_else>&nbsp;</tmpl_if></tmpl_if></td>
+               </tr>
+            </table>
+         </td>
+         <tmpl_if name="new_row">
+      </tr>
+      <tr>
+         </tmpl_if>
+         </tmpl_loop>
+      </tr>
+   </table>
+</form>
+<div>
+   Attack: <tmpl_var name="attack_modifier"><br />
+   Defense: <tmpl_var name="defense_modifier"><br />
+   Technology Points Last Turn: <tmpl_var name="tech_points"><br />
+   Current Research: <tmpl_var name="current_research"><br />
+   Current Research Left: <tmpl_var name="current_research_left"><br />
+</div>
+   <tmpl_include name="include_after.html">
+</body>

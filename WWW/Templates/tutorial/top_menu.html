@@ -1,0 +1,48 @@
+<table>
+   <tr>
+      <td class="thismenuitem">
+         <tmpl_unless name="overview"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','overview'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Overview<tmpl_unless name="overview"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="finding_a_game"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','finding_a_game'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Finding a Game<tmpl_unless name="finding_a_game"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="board"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','board'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Board<tmpl_unless name="board"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="moving"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','moving'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Moving Around<tmpl_unless name="moving"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="joining_a_game"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','joining_a_game'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Joining A Game<tmpl_unless name="joining_a_game"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="viewing_squares"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','viewing_squares'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Viewing Squares<tmpl_unless name="viewing_squares"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="moving_units"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','moving_units'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Moving Units<tmpl_unless name="moving_units"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="technology"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','technology'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Technology<tmpl_unless name="technology"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="expansions"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','expansions'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Builing Expansions<tmpl_unless name="expansions"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="effects"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','effects'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Starting Effects<tmpl_unless name="effects"></a></tmpl_unless>
+      </td>
+      <!--td>
+         <tmpl_unless name="allies"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','allies'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Allies<tmpl_unless name="allies"></a></tmpl_unless>
+      </td-->
+      <td class="thismenuitem">
+         <tmpl_unless name="recruits_and_money"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','recruits_and_money'); submit_form('to_tutorial_form'); return false"></tmpl_unless>Recruits &amp; Money<tmpl_unless name="recruits_and_money"></a></tmpl_unless>
+      </td>
+      <td class="thismenuitem">
+         <tmpl_unless name="end_game"><a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','end_game'); submit_form('to_tutorial_form'); return false"></tmpl_unless>End Game<tmpl_unless name="end_game"></a></tmpl_unless>
+      </td>
+   </tr>
+</table>
+<form name="to_tutorial_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Tutorial">
+   <input name="page" type="hidden" value="">
+</form>

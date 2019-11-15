@@ -1,0 +1,26 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Viewing a Square</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">Viewing a Square in Detail</p>
+   <p>So now you are in a game that has started we can now show you how to play.</p>
+   <p>Go to the board for the started game by selecting <tmpl_if name="logged_on"><a href="#" class="menuitem" onClick="javascript:submit_form('to_my_games_form'); return false"></tmpl_if>My Games<tmpl_if name="logged_on"></a></tmpl_if> on the left menu, then press the Select button on the game row. You will then be taken to the board centered on your starting place.</p>
+   <p>You can move around the board as before when you were finding a starting place, but we want to view our squares in more detail. Change the drop dwon box at the top of the screen to View, and press one of you squares.</p>
+   <p>You will now see a detailed view of the selected square.</p>
+   <p>This screen has the secion of the board directly surrounding the selected square, and details on the selected square. From here you make your moves.</p>
+   <p>Hovering the mouse over the board segments at the top will display details on the squares; these include the owner, number of units on the square, the land type, and any expansions or effects for the square.</p>
+   <p>From here you can make your moves (which we will see how to do in the next prt of the tutorial), view the number of incomming friendly units from neighbouring squares and recruits, and view the details of expansions and effects.</p>
+   <p>If you view a square you do not own, you will be given limited details on the square.</p>
+   <p>If you wish to know more on the view square screen, look in the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','moving');set_form_section('to_manual_form','view_square'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','moving_units'); submit_form('to_tutorial_form'); return false">Next (Making a Move)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

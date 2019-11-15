@@ -1,0 +1,152 @@
+<table cellspacing=0 cellpadding=0 border=0 bgcolor=#666666 height=100%>
+   <tr valign=top>
+      <td>
+         <table cellspacing=0 cellpadding=0 border=0>
+            <tmpl_if name="logged_on">
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_create_game_form'); return false">New Game</a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_create_game_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="CreateGame">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_find_game_form'); return false">Find Game</a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_find_game_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="FindGame">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_my_games_form'); return false">My Games</a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_my_games_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="FoundGames">
+            <input name="my_games" type="hidden" value="1">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_messages_form'); return false"><tmpl_if name="new_messages"><tmpl_var name="new_messages"></tmpl_if>Message<tmpl_unless name="new_messages">s</tmpl_unless></a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_messages_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="Messages">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            <tmpl_if name="game_ID">
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_board_form'); return false">Board</a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_board_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="Board">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            <tmpl_if name="my_player_ID">
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_tech_form'); return false">Technology</a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_tech_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="Technology">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            </tmpl_if>
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_players_form'); return false">Players</a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_players_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="Players">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_summary_form'); return false">Summary</a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_summary_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="Summary">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            </tmpl_if>
+            <tr>
+               <td>
+                  <div class="side_button_bg">
+                     <div class="side_button">
+                        <a href="#" class="menuitem" onClick="javascript:submit_form('to_help_form'); return false">Help</a>
+                     </div>
+                  </div>
+               </td>
+         <form name="to_help_form" action="/cgi/page.cgi" method="post">
+            <input name="state" type="hidden" value="<tmpl_var name="state">">
+            <input name="action" type="hidden" value="Help">
+            <input name="no_check" type="hidden" value="1">
+         </form>
+            </tr>
+            <tmpl_else>
+            <tr class="largelabel"><td><div class="side_bar_remaining">Please<br />Log On<br />Or<br />Register</div></td></tr>
+            </tmpl_if>
+         </table>
+      </td>
+   </tr>
+   <tr valign=top height=100%>
+      <td>
+         <table height=100% class="side_bar_remaining">
+            <tr><td>
+            &nbsp;
+            </td></tr>
+         </table>
+      </td>
+   </tr>
+</table>

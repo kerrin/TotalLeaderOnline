@@ -1,0 +1,23 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Recruits &amp; Money</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">Recruits &amp; Money</p>
+   <p>At the end of every turn, players are given new recruits and money.</p>
+   <p>The number of recruits is based on the amount of land they own. For every 5 squares owned, you will get a recruit.</p>
+   <p>The amount of money you get is based on the number of units owned.</p>
+   <p>Both of these numbers can be increased by effects and expansions.</p>
+   <p>To see how much money and how many recruits have been trained ready for assignment, you can view the Summary screen by selecting the Summary button on the left menu.</p>
+   <p>For a more detailed explaination of recruits and money look in the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','recruits_and_money'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','end_game'); submit_form('to_tutorial_form'); return false">Next (End of Game)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

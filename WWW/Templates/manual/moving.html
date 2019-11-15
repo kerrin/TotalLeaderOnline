@@ -1,0 +1,115 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Moving &amp; Attacking</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+
+   When attacking normally, the result of the battle is predefined between 2 players.<br />
+   If units are assigned to attack for a turn, they do not count as defending the square.<br />
+   If multiple attacks are preformed on a single square, they are performed in a random order, one after another.<br />
+   If an attack is succesful in killing all units on a square, the attacking units move in to the defending square and the attacker is now the owner of that square<br /> 
+   <br />
+   <a name="attack_table" />
+   <p class="manual_heading">Basic Attacking</p>
+   <table border=1>
+      <tr>
+         <th align="left">Attacking Player Units</th><th align="left">Defending Player Units</th><th>Result</th>
+      </tr>
+      <tr>
+         <td rowspan=3>More Than Defender</td><td>0 or 2</td><td>Attacker takes square with no losses, defender losses all units<td>
+      </tr>
+      <tr><td>1</td><td>Attacker takes square and gains a unit if the square can support it, defender losses unit</td>
+      </tr>
+      <tr>
+         <td>3 or More</td><td>Attacker takes square, but losses 1 unit for every unit the defender had above 2, defender losses all units</td>
+      </tr>
+      <tr>
+         <td>1 Unit</td><td>2 or More</td><td>Defender gains unit if the square can support it, attack losses unit</td>
+      </tr>
+      <tr>
+         <td>Less Than Defender</td><td>2 or More</td><td>Defender losses 1 unit for each unit the attacker had above 1</td>
+      </tr>
+      <tr>
+         <td>Same As Defender</td><td>Same Attacker</td><td>Both attacker and defender lose all but one unit. Attackers unit stays on originating square</td>
+      </tr>
+   </table>
+   <br />
+   <br />
+   <a name="battle_modifier_table">
+   <p class="manual_heading">Battle Modifiers</p>
+   <table border=1>
+      <tr>
+         <th align="left">Expansion, Land Type, or Effect</th><th align="left">Effect on squares units during attack</th>
+      </tr>
+      <tr>
+         <td><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','board'); set_form_section('to_manual_form','square_types_table'); submit_form('to_manual_form'); return false">Mountain</a> on defending square</td><td>Defender has +1 units</td>
+      </tr>
+      <tr>
+         <td><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','board'); set_form_section('to_manual_form','square_types_table'); submit_form('to_manual_form'); return false">Mountain</a> on attacking square</td><td>Attacker has +1 units</td>
+      </tr>
+      <tr>
+         <td><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','board'); set_form_section('to_manual_form','square_types_table'); submit_form('to_manual_form'); return false">Forest</a> on defending square</td><td>Defender has +1 units</td>
+      </tr>
+      <tr>
+         <td><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','fort'); submit_form('to_manual_form'); return false">Fort</a> expansion on defending square</td><td>Defender has +1 units</td>
+      </tr>
+      <tr>
+         <td><a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','fort'); submit_form('to_manual_form'); return false">Fort</a> expansion on attacking square</td><td>Attacker has +1 units</td>
+      </tr>
+      <tr>
+         <td>Fire on defending square</td><td>Defender has -1 units</td>
+      </tr>
+      <tr>
+         <td>Minor Square</td><td>Defender has +1 units</td>
+      </tr>
+   </table>
+   <b>Note: If a square has no units defending it, the defence modifiers have no effect</b>
+   <br />
+   <br />
+   <p class="manual_heading">Examples (Assumes no <a href="#battle_modifier_table">Battle Modifiers</a>)</p>
+   <table border="1">
+      <tr>
+         <th colspan="2">Fighting Units</th><th>&nbsp;</th><th colspan="2">Resulting Units</th>
+      </tr>
+      <tr>
+         <th>Attacker</th><th>Defender</th><th>&nbsp;</th><th>Attacker</th><th>Defender</th>
+      </tr>
+      <tr>
+         <td><img src="/Images/units_8.gif" alt="8" /></td><td><img src="/Images/units_1.gif" alt="1" /></td><td>&nbsp;</td><td><img src="/Images/units_9.gif" alt="9" /></td><td><img src="/Images/units_none.gif" alt="0" /></td>
+      </tr>
+      <tr>
+         <td><img src="/Images/units_5.gif" alt="5" /></td><td><img src="/Images/units_2.gif" alt="2" /></td><td>&nbsp;</td><td><img src="/Images/units_5.gif" alt="5" /></td><td><img src="/Images/units_none.gif" alt="0" /></td>
+      </tr>
+      <tr>
+         <td><img src="/Images/units_5.gif" alt="5" /></td><td><img src="/Images/units_6.gif" alt="6" /></td><td>&nbsp;</td><td><img src="/Images/units_none.gif" alt="0" /></td><td><img src="/Images/units_2.gif" alt="2" /></td>
+      </tr>
+      <tr>
+         <td><img src="/Images/units_9.gif" alt="9" /></td><td><img src="/Images/units_9.gif" alt="9" /></td><td>&nbsp;</td><td><img src="/Images/units_1.gif" alt="1" /></td><td><img src="/Images/units_1.gif" alt="1" /></td>
+      </tr>
+      <tr>
+         <td><img src="/Images/units_1.gif" alt="1" /></td><td><img src="/Images/units_8.gif" alt="8" /></td><td>&nbsp;</td><td><img src="/Images/units_none.gif" alt="0" /></td><td><img src="/Images/units_9.gif" alt="9" /></td>
+      </tr>
+      <tr>
+         <td><img src="/Images/units_9.gif" alt="9" /></td><td><img src="/Images/units_1.gif" alt="1" /></td><td>&nbsp;</td><td><img src="/Images/units_9.gif" alt="9" /></td><td><img src="/Images/units_none.gif" alt="0" /></td>
+      </tr>
+      <tr>
+         <td><img src="/Images/units_1.gif" alt="1" /></td><td><img src="/Images/units_9.gif" alt="9" /></td><td>&nbsp;</td><td><img src="/Images/units_none.gif" alt="0" /></td><td><img src="/Images/units_9.gif" alt="9" /></td>
+      </tr>
+   </table>
+   <a name="view_square">
+   <p>To make a move you will need to view one of your squares. Go to the Board, find one of your squares, and change the drop down at the top to View, then select one of your squares. You will be taken to the detailed view of the square.</p>
+   <p>This screen has the secion of the board directly surrounding the selected square, details on the selected square, and where the units currently on this sqaure are moving to. From here you make your moves.</p>
+   <p>The number in the center square of the area display is the number of units that are currently not moving. The numbers in the other squares show how many units are moving and where to.</p>
+   <p>Hovering the mouse over the board segments will display details on the squares; these include the owner, number of units, land type, and any expansions or effects for the square.</p>
+   <p>To move you will need units on the current square, select the direction you want to move the units in by changing the drop down or pressing the appropriate square on the area summary.<br />
+   Next select the number of units to move by changing the drop down.<br />
+   Next make sure the move type drop down is set to move.<br />
+   Once you are happy with the move press the Move button.<br />
+   You can build expansions on major squares and start effects on any square by changing the move type drop down.</p>
+   <p>If you change your mind, and wish to cancel a move, simply move 0 units to the square the move is for, and the move will be cancelled</p>
+   <p>If you change your mind, and wish to cancel a move, simply move 0 units to the square the move is for, and the move will be cancelled</p>
+   <p>If this square has a base on, you can assign new recruits on this screen to. To assign recruits select the number of recruits to assign in the recruit section and press the Assign button. Note: You can only assign the number of recruits that there is space on the square. To make space for recruits, first move any units there off the square. It is safe to move all units off if you intend to assign recruits, as recruits are assigned before any fighting occurs.</p>
+   <p>To see how recuits are made available to players, see the Manual secion on <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','recruits_and_money'); submit_form('to_manual_form'); return false">Recruits</a>.
+
+   <tmpl_include name="include_after.html">
+</body>

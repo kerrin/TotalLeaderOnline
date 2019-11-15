@@ -1,0 +1,89 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p><tmpl_var name="error_message"></p></tmpl_if>
+   <p class="label">Please, enter your details, all fields are required</p>
+<form name="registration_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="Register" />
+   <input name="event" type="hidden" value="Register" />
+   <table>
+      <tr>
+         <td <tmpl_if name="need_username">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Email Address</td>
+         <td><input name="username"  type="text" value="<tmpl_var name="username">" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_password">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Password</td>
+         <td><input name="password"  type="password" value="" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_confirm_password">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Confirm Password</td>
+         <td><input name="confirm_password"  type="password" value="" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_screen_name">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Screen Name</td>
+         <td><input name="screen_name"  type="text" value="<tmpl_var name="screen_name">" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_firstname">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>First Name</td>
+         <td><input name="firstname"  type="text" value="<tmpl_var name="firstname">" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_surname">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Surname</td>
+         <td><input name="surname"  type="text" value="<tmpl_var name="surname">" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_dob">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Date Of Birth</td>
+         <td>
+            <select name="dob_day">
+               <tmpl_loop name="dob_day_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            <select name="dob_month">
+               <tmpl_loop name="dob_month_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            <select name="dob_year">
+               <tmpl_loop name="dob_year_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr <tmpl_if name="need_gender_ID">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>
+         <td>Gender</td>
+         <td>
+            <select name="gender_ID">
+               <tmpl_loop name="gender_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr <tmpl_if name="need_resolution">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>
+         <td>Screen Resolution</td>
+         <td>
+            <select name="resolution">
+               <tmpl_loop name="resolution_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:submit_form('registration_form'); return false">Register</a></td>
+      </tr>
+</form>
+   <tmpl_include name="include_after.html">
+</body>

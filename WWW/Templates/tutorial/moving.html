@@ -1,0 +1,23 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Moving Around The Board</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">Moving Around The Board</p>
+   <p>You can move around the board in two ways:
+   <ul>
+      <li>Pressing a green arrow at the edge of the board (<img src="/Images/up.gif" border=0 height="20" width="20" />, <img src="/Images/right.gif" border=0 height="20" width="20" />, <img src="/Images/down.gif" border=0 height="20" width="20" />, <img src="/Images/left.gif" border=0 height="20" width="20" />) to move the view of the board in that direction.</li>
+      <li>Making sure the drop down box at the top of the screen says 'Move View' and then selecting a square by pressing the left mouse button; this will center the view on the selected square.</li>
+   </ul>
+   </p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','joining_a_game'); submit_form('to_tutorial_form'); return false">Next (Joining a Game)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

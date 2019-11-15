@@ -1,0 +1,133 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <tmpl_if name="error_message"><p><tmpl_var name="error_message"></p></tmpl_if>
+   <p class="label">Please, enter the game details</p>
+<form name="create_new_game_form" action="/cgi/page.cgi" method="post">
+   <input name="state" type="hidden" value="<tmpl_var name="state">">
+   <input name="action" type="hidden" value="CreateGame" />
+   <input name="event" type="hidden" value="CreateGame" />
+   <table>
+      <tr>
+         <td <tmpl_if name="need_game_name">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Game Name</td>
+         <td><input name="game_name" type="text" value="<tmpl_var name="game_name">" /></td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_players">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Number of Players</td>
+         <td>
+            <select name="players">
+               <tmpl_loop name="players_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_board_width">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Board Width</td>
+         <td>
+            <select name="board_width">
+               <tmpl_loop name="board_width_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_board_height">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Board Height</td>
+         <td>
+            <select name="board_height">
+               <tmpl_loop name="board_height_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_turn_frequency">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Turn Frequency</td>
+         <td>
+            <select name="turn_frequency">
+               <tmpl_loop name="turn_frequency_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_turn_weekday_type_ID">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Weekdays</td>
+         <td>
+            <select name="turn_weekday_type_ID">
+               <tmpl_loop name="turn_weekday_type_ID_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_start_hour">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Start Turns Daily At</td>
+         <td>
+            <select name="start_hour">
+               <tmpl_loop name="start_hour_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_stop_hour">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Stop Turns Daily At</td>
+         <td>
+            <select name="stop_hour">
+               <tmpl_loop name="stop_hour_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_start_date">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Start Game On</td>
+         <td>
+            <select name="start_day">
+               <tmpl_loop name="start_day_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            <select name="start_month">
+               <tmpl_loop name="start_month_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+            <select name="start_year">
+               <tmpl_loop name="start_year_loop">
+               <option value="<tmpl_var name="ID">"<tmpl_if name="selected"> selected</tmpl_if>>
+                  <tmpl_var name="name">
+               </option>
+               </tmpl_loop>
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td <tmpl_if name="need_game_turns">class="invalidlabel"<tmpl_else>class="label"</tmpl_if>>Maximum Game Turns</td>
+         <td><input name="game_turns"  type="text" value="<tmpl_var name="game_turns">" /></td>
+      </tr>
+      <tr>
+         <td colspan=2 align="center"><a href="#" class="button" onClick="javascript:submit_form('create_new_game_form'); return false">Create Game</a></td>
+      </tr>
+</form>
+   <tmpl_include name="include_after.html">
+</body

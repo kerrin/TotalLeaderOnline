@@ -1,0 +1,70 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Getting Started</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+
+   <p>For a step by step walk through of how to start and play your first game view the <a href="#" class="menuitem" onClick="javascript:submit_form('to_tutorial_form'); return false">Tutorial</a>. It is recommended that new players take the <a href="#" class="menuitem" onClick="javascript:submit_form('to_tutorial_form'); return false">Tutorial</a> and then read the manual for a more in depth view of the game.</p>
+   <form name="to_tutorial_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Tutorial">
+      <input name="page" type="hidden" value="overview">
+   </form>
+   
+   <p class="manual_heading">Joining Someone Elses Game</p>
+   <p>It is always recommended that players look for existing games waiting to start that match their requirements before creating a new game.</p>
+   <p>To find a game, select the <tmpl_if name="logged_on"><a href="#" class="menuitem" onClick="javascript:submit_form('to_find_game_form'); return false"></tmpl_if>Find Game<tmpl_if name="logged_on"></a></tmpl_if> button on the left menu. Fill out any requirements for a game you need, and then press the Find button.</p>
+   <p>Leaving fields blank and the drop down boxes on any will not restict the search on that crieria. To find all games not started yet, simply press the Find Game button without changing anything</p>
+   <p>By default (if you change nothing before pressing the Find button) it will find all games that are waiting to start.</p>
+   <p>After pressing the Find button you will be presented with the list of games matching your requirements. If none are shown, no games fitting your requirements were found, so go back and reduce your requirements, or create a new game</p>
+   <p>To view a game, select it by pressing the Select button on the result screen.</p>
+   
+   <p class="manual_heading">Choosing a Game</p>
+   <p>Once a game has been selected you will be taken to the board for that game. To return to the board of the cuurently selected game at anytime, simply press the Board button on the left hand menu. If the menu does not have a board button, you currently have no selected game.</p>
+   <p>You can view the players currently in the game by pressing the Players button on the left menu</p>
+
+   <a name="create">
+   <p class="manual_heading">Starting a New Game</p>
+   <p>If you cannot find a game you wish to join, you can create a new game.</p>
+   <p>To create a game simply press the <tmpl_if name="logged_on"><a href="#" class="menuitem" onClick="javascript:submit_form('to_create_gamee_form'); return false"></tmpl_if>New Game<tmpl_if name="logged_on"></a></tmpl_if> button on the left menu and fill out the form to specify the game parameters. Once you are happy with the game parameters, press the Create Game button.</p>
+   <p>Creating a game will automatically select it as your current game.</p>
+   <p>Please note, that you are not guarenteed a position in a game you have created, but if a game does fill up before you join it, it is clearly <b>very</b> popular, as create another with the same criteria.</p>
+   <table border="1">
+      <tr>
+         <th>Parameter</th><th>Meaning</th>
+      </tr>
+      <tr>
+         <td>Game Name</td><td>A name for the game, used in messaging and game lists</td>
+      </tr>
+      <tr>
+         <td>Number of Players</td><td>Maximum number of players allowed in the game.<br />Note: The game will still start even if this number of players is not reached.<br />Only games with less than 2 players are not started.</td>
+      </tr>
+      <tr>
+         <td>Board Width</td><td>The number of squares the entire game board is wide</td>
+      </tr>
+      <tr>
+         <td>Board Height</td><td>The number of squares the entire game board is high</td>
+      </tr>
+      <tr>
+         <td>Turn Frequency</td><td>How often a turn will occur during the games active time</td>
+      </tr>
+      <tr>
+         <td>Weekdays</td><td>The days that the game turns will happen on</td>
+      </tr>
+      <tr>
+         <td>Start Turns Daily At</td><td>The hour that the game becomes active each day it is active on (in 24 hour GMT)</td>
+      </tr>
+      <tr>
+         <td>Stop Turns Daily At</td><td>The hour that the game stops being active each day (in 24 hour GMT)</td>
+      </tr>
+      <tr>
+         <td>Start Game On</td><td>The date the first turn will happen on.<br/>It is recommended that games are started 1 to 7 days after their creation, to allow players to join.<br />Starting a game in the past will immediatly disable it.</td>
+      </tr>
+      <tr>
+         <td>Maximum Game Turns</td><td>The number of turns the game can have before it will end, with the winner being decided by scoring</td>
+      </tr>
+   </table>
+
+   <p>For a step by step walk through of how to start and play your first game view the <a href="#" class="menuitem" onClick="javascript:submit_form('to_tutorial_form'); return false">Tutorial</a></p>
+   <tmpl_include name="include_after.html">
+</body>

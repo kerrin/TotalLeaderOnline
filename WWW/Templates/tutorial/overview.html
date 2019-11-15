@@ -1,0 +1,24 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Overview</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">How To Use This Tutorial</p>
+   <p>This tutorial will take you through a step by step on how to find, join, and start to play a game. The <a href="#" class="menuitem" onClick="javascript:submit_form('to_manual_form'); return false">Manual</a> has a detailed list of how the game works.</p>
+
+   <p>At anytime you can see which section you are in by looking at the menu bar above. The current section is a different colour. You can also jump straight to any part of the tutorial by pressing the section name</p>
+   
+   <p>If you wish to know more on any area of the game, simply look in the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','started'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <p>You are now ready to start using the tutorial, so lets begin the tour. Press the Next button to continue.</p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','finding_a_game'); submit_form('to_tutorial_form'); return false">Next (Finding a Game)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

@@ -1,0 +1,24 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Effects</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">Effects</p>
+   <p>Effects are things that can be done to any square to modify events in the game. They can modify battles, technology research, money income, or ability to see other peoples squares.</p>
+   <p>Before we can start an effect, we must first research the technology to allows us to. Lets research Basic Science, as this will allow us to start a Fire. If you built a school, and keep 9 units on it, this reseach should take 4 to 5 turns.</p>
+   <p>Once you have Basic Science, a new option will appear on the view square screens for any square you have at least one unit on.</p>
+   <p>Find a square at the edge of your land with at least one unit on, and preferable next to another player. View your square. Select the other players (or natives) square on the area map, and now change the move drop down to Start Fire, and chnage the number of units to 1, and press the Move button. The unit will now be busy starting a fire, so cannot do anything else, including defend.</p>
+   <p>Next turn a fire will start on choosen square. There is a chance the unit starting the fire will get trapped and die.</p>
+   <p>Now for any fights on the square the defender will have one less unit. And there is a chance the fire will spread to adjacent squares.</p>
+   <p>To find out what the effects are, and what each of their benifits are, look in the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','effects'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','recruits_and_money'); submit_form('to_tutorial_form'); return false">Next (Recruits &amp; Money)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

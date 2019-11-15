@@ -1,0 +1,36 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: Joining a Game</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">Joining a Game</p>
+   <p>You have not yet joined the game you are viewing. So next we will join this game.</p>
+   <p>Move around the board to find somewhere to start.</p>
+   <p>The squares alternate between major squares (hexigons) and minor squares (square).</p>
+   <br />
+   <table border=0>
+      <tr><th align="center">Major Square</th><td>&nbsp;</td><th align="center">Minor Square</th></tr>
+      <tr><td align="center"><img src="/Images/plains_land_type.gif" alt="Example Major Square" /></td><td>&nbsp;</td><td align="center"><img src="/Images/small_plains_land_type.gif" alt="Example Minor Square" /></td></tr>
+   </table>
+   <p>Your starting square must be a major land square that has land next to it in the four basic directions (up, down, left and right).</p>
+   <p>The number of units on these 5 squares is not important as they will be replaced by your units when the game starts.</p>
+   <p>You may notice as you move around the board that some squares have colour boxes on them, these are the starting places of other players. You cannot start within 6 squares of another player.</p>
+   <p>Tip: Try to find somewhere that has low numbers of native units in the surrounding land for a starting place.</p>
+   <p>Once you have found a suitable starting place change the drop down box at the top to Start, and then select the Major square you want to start on. The five squares you will own at the start of the game will now be marked on the board. You have joined this game.</p>
+   <p>You can change your starting position anytime before the game starts, by finding another suitible starting position and selecting start on the drop down at the tiop of the screen, and then pressing the major square of the new starting place.</p>
+   <p>You can list all the games you are in by pressing the <tmpl_if name="logged_on"><a href="#" class="menuitem" onClick="javascript:submit_form('to_my_games_form'); return false"></tmpl_if>My Games<tmpl_if name="logged_on"></a></tmpl_if> button on the left menu</p>
+   <p>You will now have to wait for the game to start. You can find out when the game starts on the My Games screen. The next turn column tells you when the game will start. Note:If the turn column has a number huigher than 0, the game has started, if it says Done, the game has eneded.</p>
+   <p>Once you are in a game that has started you can progress to the next step of this tutorial.</p>
+   <p>You are highly recommended to make moves every turn, so be sure to return to the game for every turn, especially the early moves.</p>
+   <p>If you wish to know more on how to join an existing game, or how to create a new game, look in the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','board'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','viewing_squares'); submit_form('to_tutorial_form'); return false">Next (Viewing Squares)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

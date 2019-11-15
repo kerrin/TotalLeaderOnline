@@ -1,0 +1,6 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Welcome to Total Leader<tmpl_if name="logged_on"> <tmpl_var name="current_member_firstname"> <tmpl_var name="current_member_surname"></tmpl_if></p>
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <tmpl_include name="include_after.html">
+</body>

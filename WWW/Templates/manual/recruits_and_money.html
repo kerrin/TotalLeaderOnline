@@ -1,0 +1,20 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Recruits &amp; Money</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+
+   <p class="manual_heading">Recruits</p>
+   At the start of every turn, players are given new units, to assign to their <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','base'); submit_form('to_manual_form'); return false">Bases</a>.<br />
+   Any recruits that cannot be assigned to a <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','base'); submit_form('to_manual_form'); return false">Base</a> due to capacity restrictions are lost.<br />
+   1 recruit is given for every 5 land squares a player owns (after modifiers).<br />
+   <p class="manual_heading">Money</p>
+   At the start of every turn, players are given money. Money is used to buy expansions and effects, etc.<br />
+   1 money is given for every unit owned (after modifiers).<br />
+   <p class="manual_heading">View</p>
+   Players can only see adjacent squares to occupied squares.<br />
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','base'); submit_form('to_manual_form'); return false">Bases</a> and <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','fort'); submit_form('to_manual_form'); return false">Forts</a> can see 2 squares in each direction.<br />
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','tower'); submit_form('to_manual_form'); return false">Towers</a> that are occupied can see 4 squares in all directions.<br />
+   Squares that cannot been seen will show land type only.<br />
+   <tmpl_include name="include_after.html">
+</body>

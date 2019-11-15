@@ -1,0 +1,40 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: End of Game</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">End of Game</p>
+   <p>The game can end for a player in a number of ways:
+   <ol>
+      <li><a href="#winning" class="menuitem">Someone wins</a></li>
+      <li>They lose their last Base (Without a base, you can't assign new recruits)</li>
+      <li>They own less than 5 squares</li>
+      <li>The player resigns</li>
+      <li>The game ends as the maximum number of turns is reached</li>
+   </ol>
+   When A player loses (2, 3 and 4), their units become natives.
+   </p>
+   <a name="winning">
+   <p>A player can win the game when:
+   <ul>
+      <li>They have 1 million in money</li>
+      <li>They own 1/2 of the land squares</li>
+      <li>They have 1000 units</li>
+      <li>All other players have lost</li>
+      <li>They are the person with the highest score when the maximum number of turns is reached</li>
+   </ul>
+   </p>
+   <p>For more details on the end of the game, including a breakdown on how scoring is calculated, view the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','end_game'); submit_form('to_manual_form'); return false">Manual</a></p>
+   <p>Congratulations! You have completed the tutorial.<br />
+   If you want to know more on the game, you should read through the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','started'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:submit_form('to_home_form'); return false">Home</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

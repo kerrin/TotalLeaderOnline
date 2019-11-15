@@ -1,0 +1,14 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Turn Order</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <ul>
+      <li>Players moving on their own land, move (units assigned to attack are not counted in square capacity limits), if capacity is met, the left over units do not move</li>
+      <li>Players moving to allied squares move, if capacity is met, the left over units do not move</li>
+      <li>Attacks are performed in a random order, any units that are left over from attacks, that don&apos;t move, are added to the defending units on the square</li>
+      <li>Calculate technology</li>
+   </ul>
+
+   <tmpl_include name="include_after.html">
+</body>

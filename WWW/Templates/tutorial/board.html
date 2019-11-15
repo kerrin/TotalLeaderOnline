@@ -1,0 +1,22 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Tutorial: The Board</p>
+   <tmpl_include name="tutorial/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <form name="to_manual_form" action="/cgi/page.cgi" method="post">
+      <input name="state" type="hidden" value="<tmpl_var name="state">">
+      <input name="action" type="hidden" value="Manual">
+      <input name="page" type="hidden" value="started">
+   </form>
+
+   <p class="manual_heading">The Board</p>
+   <p>The board is made up of a grid of &apos;Squares&apos;. Note: &apos;Squares&apos; is used to refer to a single segment of the board that can be owned by one person.<br />
+   A square is either land or water. Land squares have different properties, i.e. mountains, forests, and plains.<br />
+   Natives (non-player units) of varied amounts occupy all land squares.</p>
+   <p>Once the game has started, you will not be able to see the number of units on a square, or ownership of any squares beyond your line of sight, which is usually the adjacent squares to ones you own, so make sure you look at the board while you can.</p>
+   <p>If you wish to know more on the board layout, look in the appropriate section of the <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','board'); submit_form('to_manual_form'); return false">Manual</a></p>
+
+   <a href="#" class="menuitem" onClick="javascript:set_value('to_tutorial_form','page','moving'); submit_form('to_tutorial_form'); return false">Next (Moving Around)</a>
+      </td>
+   <tmpl_include name="include_after.html">
+</body>

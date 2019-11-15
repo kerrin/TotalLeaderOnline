@@ -1,0 +1,41 @@
+<body class="wholebody">
+   <tmpl_include name="include_before.html">
+   <p class="label">Manual: Board</p>
+   <tmpl_include name="manual/top_menu.html">
+   <tmpl_if name="message"><p class="label"><tmpl_var name="message"></p></tmpl_if>
+   <p>The board is made up of a grid of &apos;Squares&apos;. Note: &apos;Squares&apos; is used to refer to a single segment of the board that can be owned by one person.<br />
+   A square starts of as either land or water.<br />
+   Land squares have different properties, e.g. mountains, forests, plains, etc.<br />
+   Natives (non-player units) of varied amounts occupy all land squares.<br />
+   No square can ever contain more than 9 units.<br />
+   Players can move units to adjacent squares they own, or attack adjacent squares they don&apos;t yet own. Different square types have different attributes.<br />
+   <a name="square_types_table">
+   <table border=1>
+      <tr>
+         <th align="left">Square Type</th><th align="left">Property</th>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/small_sea_land_type.gif" alt="Sea" />Sea</td><td>Passable with ships from <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','port'); submit_form('to_manual_form'); return false">Ports</a> and by building <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); set_form_section('to_manual_form','bridge'); submit_form('to_manual_form'); return false">Bridges</a></td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/small_plains_land_type.gif" alt="Plains" />Plains</td><td>Normal</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/small_mountain_land_type.gif" alt="Mountain" />Mountain</td><td>+1 to attack to, -1 to attack from</td>
+      </tr>
+      <tr>
+         <td align="left"><img src="/Images/small_forest_land_type.gif" alt="Forest" />Forest</td><td>+1 to attack to</td>
+      </tr>
+   </table>
+   The squares alternate between major squares (hexigons) and minor squares (square).<br />
+   <br />
+   <table border=0>
+      <tr><th align="center">Major Square</th><td>&nbsp;</td><th align="center">Minor Square</th></tr>
+      <tr><td align="center"><img src="/Images/plains_land_type.gif" alt="Example Major Square" /></td><td>&nbsp;</td><td align="center"><img src="/Images/small_plains_land_type.gif" alt="Example Minor Square" /></td></tr>
+   </table>
+   <br />
+   Only major squares can have <a href="#" class="menuitem" onClick="javascript:set_value('to_manual_form','page','expansions'); submit_form('to_manual_form'); return false">Expansions</a>, and can be got to from all 8 directions.<br />
+   The minor squares can only be got to from the 4 adjacent major squares, so are easier to defend, but cannot have improvements.<br />
+   
+   <tmpl_include name="include_after.html">
+</body>
